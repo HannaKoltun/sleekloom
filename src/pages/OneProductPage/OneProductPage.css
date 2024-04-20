@@ -1,0 +1,149 @@
+
+.imageOneProduct {
+    width: 340px;
+    height: 400px;
+    /* background-color: rgb(156, 244, 116); */
+    /* margin-right: 40px; */
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+
+
+.oneProductSettings {
+    width: auto;
+    height: auto;
+    /* background-color: rgb(69, 60, 199); */
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    right: 305px;
+}
+
+.oneProductTitle {
+    width: 245px;
+    height: auto;
+    /* background-color: rgb(90, 88, 120); */
+    font-family: Anton;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.oneProductCount {
+    width: 245px;
+    height: 50px;
+    /* background-color: rgb(46, 202, 32); */
+    font-family: Anton;
+    font-size: 20px;
+}
+
+.textColor{
+    width: 100px;
+    height: 10px;
+    margin-right: 140px;
+    font-family: Roboto;
+    font-size: 17px;
+}
+.oneProductColor {
+    width: 245px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: rgb(62, 137, 125); */
+}
+
+.buttonsColor{
+    width: 70px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.buttonsColorBrown{
+    width: 18px;
+    height: 18px;
+    border-radius: 25px;
+    background-color: #3c251c;
+    border: none;
+}
+.buttonsColorBlack{
+    width: 18px;
+    height: 18px;
+    border-radius: 25px;
+    background-color: #000000;
+    border: none;
+
+}
+.buttonsColorWhite{
+    width: 18px;
+    height: 18px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+
+.oneProductSize {
+    width: 245px;
+    height: 55px;
+    /* background-color: rgb(105, 70, 147); */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.addToCart {
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ff5f20;
+    margin-left: 50px;
+    font-family: Anton;
+    font-size: 17px;
+}
+
+.buttonsSize{
+    width: 35px;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.buttonsSize:hover{
+    background-color: rgb(227, 227, 227);
+}
+
+
+
+.mainContainer {
+    width: auto;
+    height: 500px;
+    background-color: #d6d6d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.back {
+    object-fit: cover;
+    width: 1200px;
+    height: 500px;
+}
+
+.relativeContainer {
+    width: 1200px;
+    height: 500px;
+    position: absolute;
+    z-index: 0;
+    /* background-color: rgba(0, 255, 255, 0.418); */
+}

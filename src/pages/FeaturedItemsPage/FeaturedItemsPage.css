@@ -1,0 +1,92 @@
+.featContainer {
+    width: auto;
+    height: 370px;
+    background-color: #d6d6d6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    width: 1120px;
+    height: 70px;
+    /* position: relative; */
+    /* background-color: cadetblue; */
+}
+
+.featiconscont {
+    width: 45px;
+    height: 20px;
+}
+
+.featCards {
+    width: 1200px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.imgloomA {
+    width: 220px;
+    height: 150px;
+    transition: transform 1s;
+    cursor: pointer;
+}
+.imgloomA:hover {
+    transform: scale(1.1);
+}
+
+.imgloomB {
+    width: 220px;
+    height: 200px;
+    transition: transform 1s;
+    cursor: pointer;
+}
+.imgloomB:hover {
+    transform: scale(1.1);
+}
+.imgloomC {
+    width: 220px;
+    height: 245px;
+    transition: transform 1s;
+    cursor: pointer;
+}
+.imgloomC:hover {
+    transform: scale(1.1);
+}
+
+.cardContainer {
+    width: auto;
+    height: 300px;
+    /* background-color: rgb(176, 51, 183); */
+}
+
+
+.featCostContainer {
+    height: 50px;
+    margin-top: 10px;
+    width: auto;
+    /* background-color: rgb(116, 98, 181); */
+    display: flex;
+    justify-content: space-between;
+}
+
+.featText{
+font-family: Roboto;
+font-weight: 500;
+font-size: 15px;
+}
+
+.featCost{
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 15px;
+}

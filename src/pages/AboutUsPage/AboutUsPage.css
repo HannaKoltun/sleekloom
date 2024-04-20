@@ -1,0 +1,52 @@
+.usContainer {
+    width: auto;
+    height: 700px;
+    background-color: #d6d6d6;
+    display: flex;
+    justify-content: center;
+}
+
+.backOrange {
+    width: 1800px;
+    height: 700px;
+}
+
+.contForcomp{
+    width: 1200px;
+    height: 560px;
+    position: absolute;
+    z-index: 0;
+    /* background-color: rgba(0, 0, 255, 0.42); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.usImageOne{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    left: -76px;
+    top: 75px;
+}
+
+
+.usImageTwo{
+    width: 100px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    right: 65px;
+    top: 75px;
+}
+
+.usImageThree{
+    width: 95px;
+    height: 350px;
+    position: absolute;
+    z-index: 1;
+    right: -80px;
+    top: 200px;
+}
