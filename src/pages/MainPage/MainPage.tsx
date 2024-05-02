@@ -1,10 +1,7 @@
 import './MainPage.css';
-import back from "D:/Docs/TMS/sleekloom/sleemloom/sleem-loom/src/assets/bg.jpg";
-import graff from "D:/Docs/TMS/sleekloom/sleemloom/sleem-loom/src/assets/gr.png";
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { FaArrowRight } from "react-icons/fa6";
-import { counterSlice, fetchData } from '../../slice/cardsSlice';
+import back from '../../assets/bg.jpg'
+import graff from "../../assets/gr.png";
+import { Link } from 'react-router-dom';
 
 
 export default function MainPage() {
@@ -26,7 +23,8 @@ export default function MainPage() {
                         LOOM
                         <div className='buttonContainer'>
                             <img src={graff} alt="bg" className='gragg' />
-                            <button className='buttonRing'>SHOP NOW</button>
+                            <Link  className='buttonRing' to="/cataloge">SHOP NOW
+                            </Link>
                         </div>
                     </div>
 

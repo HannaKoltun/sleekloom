@@ -3,9 +3,12 @@ import FeaturedItems from '../../components/FeaturedItems/FeaturedItems';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../../slice/cardsSlice';
-import back from "D:/Docs/TMS/sleekloom/sleemloom/sleem-loom/src/assets/bg.jpg";
-import { fetchOneProduct } from '../../slice/oneProductSlice';
+import back from "../../assets/bg.jpg";
+import { addToCart, fetchOneProduct, clearCartAction } from '../../slice/oneProductSlice';
 import { useParams } from 'react-router-dom';
+import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+import { decrement, increment } from '../../slice/countSlice';
 
 export default function OneProductPage() {
     //данные одной карточки
@@ -20,7 +23,25 @@ export default function OneProductPage() {
     }, [])
 
     const oneprod = useSelector((state: any) => state.onePost.oneProduct)
-    console.log(oneprod)
+    const countValue = useSelector((state: any) => state.count.value);
+
+    const [isCounterButtonVisible, setIsCounterButtonVisible] = useState(false);
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        if (count > 0) {
+            setIsCounterButtonVisible(true);
+        } else {
+            setIsCounterButtonVisible(false);
+        }
+    }, [count]);
+
+    const handleAddToCart = () => {
+        dispatch(addToCart(oneprod));
+        setCount(count + 1);
+    };
+
+
 
 
     //менять цвет и размер
@@ -33,66 +54,72 @@ export default function OneProductPage() {
         setSelectedSize(size);
     };
 
-    // // загрузка данных api
-    // const [loading, setLoading] = useState(true);
-
-    // useEffect(() => {
-    //     dispatch(fetchData())
-    //         .then(() => setLoading(false))
-    //         .catch(() => setLoading(false));
-    // }, [dispatch]);
-
-    // const data = useSelector((state: any) => state.counter.data);
-    // console.log(data)
-
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // }
-    //обрезать title
-    const truncateText = (text: string, wordsCount: number) => {
-        const words = text.split(' ');
-        if (words.length > wordsCount) {
-            return words.slice(0, wordsCount).join(' ') + '...';
-        }
-        return text;
-    };
-
 
 
     return (
         <>
 
             <div className='mainContainer'>
-                <img src={back} alt="bg" className='back' />
+                <img src={back} alt="bg" className='backOne' />
+
                 <div className='relativeContainer'>
-                            <div key={oneprod.id}>
-                                <img src={oneprod.image} className='imageOneProduct' />
-                            </div>
-         
+
+
+                    <Link className='linkStyle' to="/cataloge">
+                        <div className='backText'><FaArrowLeft className='backIcon' />BACK</div>
+                    </Link>
+                    <div key={oneprod.id}>
+                        <img src={oneprod.image} className='imageOneProduct' />
+                    </div>
+
 
                     <div className='oneProductSettings'>
-                  
-                            <div key={oneprod.id}>
-                                <div className='oneProductTitle'>{oneprod.title}</div>
-                                <div className='oneProductCount'>{oneprod.price}$</div>
 
-                                <div className='oneProductColor'>
-                                    <div className='textColor'>Color: {selectedColor} </div>
-                                    <div className='buttonsColor'>
-                                        <button onClick={() => handleColorChange('Brown')} className='buttonsColorBrown'></button>
-                                        <button onClick={() => handleColorChange('Black')} className='buttonsColorBlack'></button>
-                                        <button onClick={() => handleColorChange('White')} className='buttonsColorWhite'></button></div>
-                                </div>
-                                <div className='oneProductSize'>
-                                    <button onClick={() => handleSizeChange('XS')} className='buttonsSize'>XS</button>
-                                    <button onClick={() => handleSizeChange('S')} className='buttonsSize'>S</button>
-                                    <button onClick={() => handleSizeChange('M')} className='buttonsSize'>M</button>
-                                    <button onClick={() => handleSizeChange('L')} className='buttonsSize'>L</button>
-                                    <button onClick={() => handleSizeChange('XL')} className='buttonsSize'>XL</button>
-                                    {/* <h3>Выбранный размер: {selectedSize}</h3> */}
-                                </div>
-                                <button className='addToCart'>Add to Cart</button>
+                        <div key={oneprod.id}>
+                            <div className='oneProductTitle'>{oneprod.title}</div>
+                            <div className='oneProductCount'>{oneprod.price}$</div>
+
+                            <div className='oneProductColor'>
+                                <div className='textColor'>Color: {selectedColor} </div>
+                                <div className='buttonsColor'>
+                                    <button onClick={() => handleColorChange('Brown')} className='buttonsColorBrown'></button>
+                                    <button onClick={() => handleColorChange('Black')} className='buttonsColorBlack'></button>
+                                    <button onClick={() => handleColorChange('White')} className='buttonsColorWhite'></button></div>
                             </div>
+                            <div className='oneProductSize'>
+                                <button onClick={() => handleSizeChange('XS')} className='buttonsSize'>XS</button>
+                                <button onClick={() => handleSizeChange('S')} className='buttonsSize'>S</button>
+                                <button onClick={() => handleSizeChange('M')} className='buttonsSize'>M</button>
+                                <button onClick={() => handleSizeChange('L')} className='buttonsSize'>L</button>
+                                <button onClick={() => handleSizeChange('XL')} className='buttonsSize'>XL</button>
+                                {/* <h3>Выбранный размер: {selectedSize}</h3> */}
+                            </div>
+
+
+
+                            <div>
+                                {isCounterButtonVisible ? (
+                                    <div className="counterButton">
+                                       <button className="more" onClick={() => dispatch(decrement())}>-</button>
+                                        <div className="countValueStyle">{countValue}</div>
+                                        <button className="more" onClick={() => dispatch(increment())}>+</button>
+                                      
+                                    </div>
+                                ) : (
+                                    <button className="addToCart" onClick={handleAddToCart}>
+                                        Add to Cart
+                                    </button>
+                                )}
+                            </div>
+
+
+
+
+
+
+
+                        
+                        </div>
                     </div>
                 </div>
             </div>

@@ -20,37 +20,51 @@ export const fetchOneProduct = createAsyncThunk(
 
 
 export const onePostSlice = createSlice({
-  name: 'onePost',
-  initialState: {
-    status: null,
-    error: null,
-    oneProduct: [],
-  },
-  reducers: {
+    name: 'onePost',
+    initialState: {
+        status: null,
+        error: null,
+        oneProduct: [],
+        cartItems: [],
+    },
+    reducers: {
+        addToCart(state: any, { payload }: { payload: any }) {
+            state.cartItems.push(payload)
+        },
 
-  },
-  extraReducers: (builder) => {
-  //oneProduct
-  builder.addCase(fetchOneProduct.fulfilled, (state: any, { payload }: { payload: any }) => {
-    state.status = "resolved";
-    state.error = null;
-    state.oneProduct = payload
-})
 
-builder.addCase(fetchOneProduct.rejected, (state: any, { payload }: { payload: any }) => {
-    state.status = "rejected";
-    state.error = payload;
-})
+        clearCartAction(state: any, { payload }: { payload: any }) {
+            state.cartItems = state.cartItems.filter((item: any) => item.id !== payload.id);
+        },
 
-builder.addCase(fetchOneProduct.pending, (state: any) => {
-    state.status = "loading";
-    state.error = null;
-})
+        clearAllCartAction(state) {
+            state.cartItems = [];
+        }
+        
+        
+    },
+    extraReducers: (builder) => {
+        //oneProduct
+        builder.addCase(fetchOneProduct.fulfilled, (state: any, { payload }: { payload: any }) => {
+            state.status = "resolved";
+            state.error = null;
+            state.oneProduct = payload
+        })
 
-}
+        builder.addCase(fetchOneProduct.rejected, (state: any, { payload }: { payload: any }) => {
+            state.status = "rejected";
+            state.error = payload;
+        })
+
+        builder.addCase(fetchOneProduct.pending, (state: any) => {
+            state.status = "loading";
+            state.error = null;
+        })
+
+    }
 })
 
 // Функция действия генерируется на каждую функцию релюсера(reducer), определённую в createSlice
-export const {} = onePostSlice.actions
+export const { addToCart, clearCartAction, clearAllCartAction} = onePostSlice.actions
 
 export default onePostSlice.reducer

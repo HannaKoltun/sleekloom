@@ -3,7 +3,7 @@ export interface IFeaturedItems {
     slyleFeatImage: string,
     styleFeatTwo: string,
     featCostContainer: string,
-    cardContainer: string; 
+    cardContainer: string;
     "id": number,
     "title"?: string,
     "price"?: number,
@@ -33,13 +33,21 @@ export interface IFeatItems {
     "rating"?: any,
     "rate"?: number,
     "count"?: number,
+    'component'?: any,
 }
 
 export interface IObj {
     'username': string,
     'email': string,
     'password': string,
+    'confirmpassword': string,
 }
+
+export interface ILogIn {
+    'username': string,
+    'password': string,
+}
+
 
 export interface IInput {
     typeInput: string,
@@ -50,4 +58,16 @@ export interface IInput {
     placeholder: string
     inputValue: string
     setInputValue: (e: any) => void
+}
+
+
+export interface SearchInputProps {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onSearch: () => void;
+}
+
+
+export interface ISearch {
+    isSearchOpen: any,
+    closeSearch: any,
 }

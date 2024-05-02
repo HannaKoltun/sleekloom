@@ -1,13 +1,13 @@
-import '../SignUpPage/SignUpPage.css';
+import '../LogInPage/LogInPage.css';
 import Inputs from '../../components/SignUpInput/SignUpInput';
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAuthUser } from '../../slice/authUsersSlice';
+import { fetchLogIn } from '../../slice/LogInSlice';
 // import Spinner from '../../components/Spinner/Spinner';
 import { useNavigate } from 'react-router-dom'
 
-export default function SingUpPage() {
+export default function LogInPage() {
 
     const navigate = useNavigate()
 
@@ -22,14 +22,12 @@ export default function SingUpPage() {
     function authObj() {
         return {
             'username': inputName,
-            'email': inputEmail,
             'password': inputPassword,
-            'confirmpassword': inputPassword,
         }
     }
 
     function sendData() {
-        dispatch(fetchAuthUser(authObj()))
+        dispatch(fetchLogIn(authObj()))
     }
 
     const auth = useSelector((state: any) => state.authUser)
@@ -65,16 +63,6 @@ export default function SingUpPage() {
                                 setInputValue={e => setInputName(e.target.value)}
                             ></Inputs>
                             <Inputs
-                                id="2"
-                                legend="Email"
-                                type="email"
-                                typeInput={`default focus active`}
-                                isDisabled={false}
-                                placeholder="Your email"
-                                inputValue={inputEmail}
-                                setInputValue={e => setinputEmail(e.target.value)}
-                            ></Inputs>
-                            <Inputs
                                 id="3"
                                 legend="Password"
                                 type="password"
@@ -84,21 +72,7 @@ export default function SingUpPage() {
                                 inputValue={inputPassword}
                                 setInputValue={e => setinputPassword(e.target.value)}
                             ></Inputs>
-                            <Inputs
-                                id="4"
-                                legend="Confirm Password"
-                                type="password"
-                                typeInput={`default focus active`}
-                                isDisabled={false}
-                                placeholder="Confirm password"
-                                inputValue={inputConfirmPassword}
-                                setInputValue={e => setinputConfirmPassword(e.target.value)}
-                            ></Inputs>
-                            <button onClick={sendData} className={`signUpButton`}>Sign Up</button>
-
-                            <div className={`titleAvailabilityAcc`}>Already have an account?
-                                <Link className='signLink' to="/">Log In</Link>
-                            </div>
+                            <button onClick={sendData} className={`signUpButton`}>Log In</button>
                         </div>
                     </> : null}
                 </div>

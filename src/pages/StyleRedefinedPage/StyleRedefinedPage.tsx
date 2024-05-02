@@ -1,5 +1,5 @@
 import './StyleRedefinedPage.css';
-import backWhite from "D:/Docs/TMS/sleekloom/sleemloom/sleem-loom/src/assets/whitebg.jpg";
+import backWhite from "../../assets/whitebg.jpg";
 import { useState, useEffect } from 'react';
 
 export default function StyleRedefinedPage() {

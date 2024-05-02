@@ -1,5 +1,5 @@
 import './AboutUsPage.css';
-import backWhite from "D:/Docs/TMS/sleekloom/sleemloom/sleem-loom/src/assets/orangebg.jpg";
+import backWhite from "../../assets/orangebg.jpg";
 import { useState, useEffect } from 'react';
 import AboutUs from '../../components/AboutUs/AboutUs';
 

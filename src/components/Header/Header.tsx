@@ -9,7 +9,7 @@ import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import CartPage from '../../pages/CartPage/CartPage';
 import SearchPage from '../../pages/SearchPage/SearchPage';
 import { Link} from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 
 export default function Header() {
 
@@ -54,7 +54,7 @@ export default function Header() {
                     </div>
 
                     <div className='catalog'>
-                        Catalog <IoIosArrowDown className="headericon" />
+                    <Link to={`/cataloge`} className='linkStyle'>Catalog <IoIosArrowDown className="headericon" /></Link>
                     </div>
 
                     <div className='discounts'>

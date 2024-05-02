@@ -17,20 +17,18 @@ export const fetchData = createAsyncThunk(
         }
     }
 )
-
-
-
 export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
     status: null,
     error: null,
     data: [],
+    searchResults: [],
   },
   reducers: {
-    // addToFav(state: any, { payload }: { payload: any }) {
-    //     state.data.push(payload)
-    // }
+    setSearchResults(state, { payload }) {
+        state.searchResults = payload;
+      },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchData.fulfilled, (state: any, { payload }: { payload: any }) => {
@@ -53,6 +51,6 @@ export const counterSlice = createSlice({
 })
 
 // Функция действия генерируется на каждую функцию релюсера(reducer), определённую в createSlice
-export const {} = counterSlice.actions
+export const {setSearchResults} = counterSlice.actions
 
 export default counterSlice.reducer

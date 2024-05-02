@@ -12,7 +12,6 @@ export default function Inputs({ typeInput, isDisabled, type, legend, id, placeh
     const [error, setError] = useState(false);
     const [errorText, setErrorText] = useState(false);
 
-
 return (
     <div className={`mainBlock`}>
         <form>

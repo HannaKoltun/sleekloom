@@ -1,4 +1,3 @@
-
 .imageOneProduct {
     width: 340px;
     height: 400px;
@@ -38,13 +37,14 @@
     font-size: 20px;
 }
 
-.textColor{
+.textColor {
     width: 100px;
     height: 10px;
     margin-right: 140px;
     font-family: Roboto;
     font-size: 17px;
 }
+
 .oneProductColor {
     width: 245px;
     height: 70px;
@@ -55,7 +55,7 @@
     /* background-color: rgb(62, 137, 125); */
 }
 
-.buttonsColor{
+.buttonsColor {
     width: 70px;
     height: 100px;
     display: flex;
@@ -65,14 +65,15 @@
 }
 
 
-.buttonsColorBrown{
+.buttonsColorBrown {
     width: 18px;
     height: 18px;
     border-radius: 25px;
     background-color: #3c251c;
     border: none;
 }
-.buttonsColorBlack{
+
+.buttonsColorBlack {
     width: 18px;
     height: 18px;
     border-radius: 25px;
@@ -80,7 +81,8 @@
     border: none;
 
 }
-.buttonsColorWhite{
+
+.buttonsColorWhite {
     width: 18px;
     height: 18px;
     border-radius: 25px;
@@ -110,7 +112,7 @@
     font-size: 17px;
 }
 
-.buttonsSize{
+.buttonsSize {
     width: 35px;
     height: 25px;
     background-color: transparent;
@@ -118,7 +120,7 @@
     text-align: center;
 }
 
-.buttonsSize:hover{
+.buttonsSize:hover {
     background-color: rgb(227, 227, 227);
 }
 
@@ -126,7 +128,7 @@
 
 .mainContainer {
     width: auto;
-    height: 500px;
+    height: auto;
     background-color: #d6d6d6;
     display: flex;
     justify-content: center;
@@ -134,10 +136,10 @@
     flex-direction: row;
 }
 
-.back {
+.backOne {
     object-fit: cover;
-    width: 1200px;
-    height: 500px;
+    width: 1380px;
+    height: 690px;
 }
 
 .relativeContainer {
@@ -147,3 +149,68 @@
     z-index: 0;
     /* background-color: rgba(0, 255, 255, 0.418); */
 }
+
+
+.addedToCart {
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #acacac;
+    pointer-events: none;
+    margin-left: 50px;
+    font-family: Anton;
+    font-size: 17px;
+}
+
+.backText{
+    font-family: Anton;
+    font-size: 20px;
+    margin-top: -50px;
+}
+.backIcon{
+    font-family: Anton;
+    font-size: 18px;
+    margin-right: 13px;
+}
+
+.counterButton{
+    display: flex;
+    flex-direction: row;
+    height: 26px;
+    width: 245px;;
+    justify-content: center;
+}
+
+.countValueStyle{
+    font-size: 20px;
+    font-family: Anton;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #000000;
+    width: 75px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.more{
+    font-size: 20px;
+    font-family: Anton;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 28px;
+    background-color: transparent;
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+
+.more:hover {
+    background-color: rgb(227, 227, 227);
+}
+
+
